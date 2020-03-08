@@ -293,6 +293,7 @@ public class TurtleGrafik extends Applet {
         break;
       }
       turtle.speed(50000000);
+      turtle.hideTurtle();
       turtle.forward(200);
       turtle.left(150);
     }
