@@ -60,6 +60,7 @@ public class TurtleGrafik extends Applet {
   private NumberField numberFieldWinkel = new NumberField();
   private Label labelMuster = new Label();
   private Button buttonStop = new Button();
+  private TextArea log = new TextArea("", 1, 1, TextArea.SCROLLBARS_VERTICAL_ONLY);
   
   private Turtle turtle;
   private int posX;
@@ -68,7 +69,6 @@ public class TurtleGrafik extends Applet {
   private int winkel;
   private Thread turtleThread;
   private boolean abbruch= false;
-  private TextArea log = new TextArea("", 1, 1, TextArea.SCROLLBARS_VERTICAL_ONLY);
   // Ende Attribute
   
   // -------------------------------------------------------------------------
@@ -109,7 +109,7 @@ public class TurtleGrafik extends Applet {
     panel.add(musterChoice);
     
     labelMuster.setBounds(18, 12, 126, 20);
-    labelMuster.setText("Auswahl Turtle-Figur");
+    labelMuster.setText("Auswahl Turtle-Muster");
     panel.add(labelMuster);    
     
     labelStartpunkt.setBounds(289, 11, 110, 20);
@@ -208,8 +208,6 @@ public class TurtleGrafik extends Applet {
       }
     };
     turtleThread.start();
-    buttonStart.setEnabled(false);
-    buttonStop.setEnabled(true);
   }
   
   public void cleanTurtlePane(ActionEvent evt) {
@@ -221,10 +219,12 @@ public class TurtleGrafik extends Applet {
   }
   
   private void runTurtle() {
-    //logMessage("bewege Turtle an " + posX + ", " + posY);
+    logMessage("Zeichnen gestartet");
     bewegeTurtleAnKoordinaten(posX, posY);
     turtle.hideTurtle();
-    
+    buttonStart.setEnabled(false);
+    buttonStop.setEnabled(true);
+
     switch (muster) {
       case TurtleGrafik.MUSTER_STERN:
         zeichneStern();
@@ -284,6 +284,7 @@ public class TurtleGrafik extends Applet {
     
     buttonStart.setEnabled(true);
     buttonStop.setEnabled(false);
+    logMessage("Zeichnen beendet");
   } 
   
   private void zeichneStern() {   

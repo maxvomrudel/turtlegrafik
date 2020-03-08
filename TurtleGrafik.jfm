@@ -240,6 +240,7 @@ object TurtleGrafik: TFGUIForm
     Top = 527
     Width = 448
     Height = 92
+    Cursor = crIBeam
     Hint = 'textArea1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
