@@ -1,0 +1,236 @@
+object TurtleGrafik: TFGUIForm
+  Left = 1186
+  Top = 133
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'TurtleGrafik'
+  ClientHeight = 548
+  ClientWidth = 488
+  Color = clSilver
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -10
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  Position = poDesigned
+  ShowHint = True
+  Visible = True
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnResize = FormResize
+  FrameType = 4
+  Modified = False
+  Resizable = False
+  Undecorated = False
+  Background = clSilver
+  PixelsPerInch = 96
+  TextHeight = 13
+  object turtlePane1: TACanvas
+    Tag = 39
+    Left = 16
+    Top = 120
+    Width = 448
+    Height = 400
+    HelpKeyword = 'TurtlePane'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+  end
+  object buttonStart: TAButton
+    Tag = -4
+    Left = 16
+    Top = 72
+    Width = 75
+    Height = 30
+    HelpKeyword = 'TurtlePane'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    Foreground = clWindowText
+    Background = clLime
+    Text = 'Start'
+    actionPerformed = 'buttonStart_ActionPerformed'
+  end
+  object numberFieldX: TANumberField
+    Tag = -21
+    Left = 288
+    Top = 32
+    Width = 48
+    Height = 24
+    Cursor = crIBeam
+    Hint = 'numberField1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+    Text = '0'
+    Editable = True
+  end
+  object numberFieldY: TANumberField
+    Tag = -21
+    Left = 344
+    Top = 32
+    Width = 48
+    Height = 24
+    Cursor = crIBeam
+    Hint = 'numberField2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+    Text = '0'
+    Editable = True
+  end
+  object buttonClean: TAButton
+    Tag = -4
+    Left = 192
+    Top = 72
+    Width = 75
+    Height = 30
+    Hint = 'button2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = clBlack
+    Background = 11513855
+    Text = 'Clean'
+    actionPerformed = 'buttonClean_ActionPerformed'
+  end
+  object figurChoice: TAComboBox
+    Tag = -9
+    Left = 16
+    Top = 32
+    Width = 249
+    Height = 30
+    Hint = 'choice1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+    SelectedIndex = 0
+    Items.Strings = (
+      'Stern'
+      'Pyramide'
+      'Spirale'
+      'erweiterte Zirkelblume'
+      'zuf'#228'llige Kreise'
+      'gespiegelte Kreise'
+      'W'#252'rfel'
+      'wei'#223'es Loch'
+      'gr'#246#223'er werdender Stern'
+      'zwei F'#252'nfecke'
+      'schwarzes Loch '
+      'gro'#223'e Spirale'
+      'Pyramide 2'
+      'durch Radar entstehendes Muster'
+      'Achtecke'
+      'verbudener Polygonenkreis'
+      'gef'#252'llter Kreis'
+      '')
+    itemStateChanged = 'figurChoice_ItemStateChanged'
+  end
+  object labelWinkel: TALabel
+    Tag = -1
+    Left = 416
+    Top = 12
+    Width = 48
+    Height = 20
+    Hint = 'label4'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clBtnFace
+    Alignment = LEFT
+    Text = 'Winkel'
+  end
+  object numberFieldWinkel: TANumberField
+    Tag = -21
+    Left = 416
+    Top = 32
+    Width = 48
+    Height = 24
+    Cursor = crIBeam
+    Hint = 'numberField3'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+    Text = '0'
+    Editable = True
+  end
+  object labelMuster: TALabel
+    Tag = -1
+    Left = 18
+    Top = 12
+    Width = 126
+    Height = 20
+    Hint = 'label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clBtnFace
+    Alignment = LEFT
+    Text = 'Auswahl Turtle-Muster'
+  end
+  object buttonStop: TAButton
+    Tag = -4
+    Left = 111
+    Top = 72
+    Width = 75
+    Height = 30
+    Hint = 'button1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = [fsBold]
+    Foreground = clWindowText
+    Background = 51455
+    Text = 'Stop'
+    actionPerformed = 'buttonStop_ActionPerformed'
+  end
+  object labelStartpunkt: TALabel
+    Tag = -1
+    Left = 289
+    Top = 11
+    Width = 110
+    Height = 20
+    Hint = 'label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clBtnFace
+    Alignment = LEFT
+    Text = 'Startpunkt x / y'
+  end
+end
