@@ -1,9 +1,9 @@
 object TurtleGrafik: TFGUIForm
-  Left = 1186
-  Top = 133
+  Left = 1184
+  Top = 55
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'TurtleGrafik'
-  ClientHeight = 548
+  ClientHeight = 638
   ClientWidth = 488
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET
@@ -213,6 +213,7 @@ object TurtleGrafik: TFGUIForm
     Font.Style = [fsBold]
     Foreground = clWindowText
     Background = 51455
+    Enabled = False
     Text = 'Stop'
     actionPerformed = 'buttonStop_ActionPerformed'
   end
@@ -232,5 +233,22 @@ object TurtleGrafik: TFGUIForm
     Background = clBtnFace
     Alignment = LEFT
     Text = 'Startpunkt x / y'
+  end
+  object log: TATextArea
+    Tag = -3
+    Left = 18
+    Top = 527
+    Width = 448
+    Height = 92
+    Hint = 'textArea1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clBtnFace
+    Scrollbars = VERTICAL_ONLY
+    Editable = False
   end
 end
